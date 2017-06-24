@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import State.EmAprovacao;
-import State.EstadoDeUmOrcamento;
+import State.StatusOrcamento;
 import chainOfResponsability.Item;
 
 public class Orcamento {
@@ -13,12 +12,12 @@ public class Orcamento {
 	public double valor;
 	private List<Item> itens;
 
-	public EstadoDeUmOrcamento estadoAtual;
+	public StatusOrcamento estadoAtual;
 
 	public Orcamento(double valor) {
 		this.valor = valor;
 		this.itens = new ArrayList<Item>();
-		this.estadoAtual = new EmAprovacao();
+		this.estadoAtual = StatusOrcamento.EM_APROVACAO;
 	}
 
 	public double getValor() {
@@ -34,19 +33,19 @@ public class Orcamento {
 	}
 
 	public void aplicaDescontoExtra() {
-		estadoAtual.aplicaDescontoExtra(this);
+		estadoAtual.getEstado().aplicaDescontoExtra(this);
 	}
 
 	public void aprova() {
-		estadoAtual.aprova(this);
+		estadoAtual.getEstado().aprova(this);
 	}
 
 	public void reprova() {
-		estadoAtual.reprova(this);
+		estadoAtual.getEstado().reprova(this);
 	}
 
 	public void finaliza() {
-		estadoAtual.finaliza(this);
+		estadoAtual.getEstado().finaliza(this);
 	}
 
 }

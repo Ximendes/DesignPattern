@@ -12,9 +12,9 @@ public class TestesDoDescontoExtra {
 												// 5%
 		reforma.aprova(); // aprova nota!
 		
-//		reforma.finaliza();
-//		 reforma.aplicaDescontoExtra(); //lancaria excecao, pois não pode dar desconto nesse estado
-         reforma.aprova(); //lança exceção, pois não pode ir para aprovado
+		reforma.finaliza();
+		 reforma.aplicaDescontoExtra(); //lancaria excecao, pois não pode dar desconto nesse estado
+//         reforma.aprova(); //lança exceção, pois não pode ir para aprovado
       }
 
 }

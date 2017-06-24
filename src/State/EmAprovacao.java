@@ -11,12 +11,12 @@ public class EmAprovacao implements EstadoDeUmOrcamento {
 
 	public void aprova(Orcamento orcamento) {
 		// desse estado posso ir para o estado de aprovado
-		orcamento.estadoAtual = new Aprovado();
+		orcamento.estadoAtual = StatusOrcamento.APROVADO;
 	}
 
 	public void reprova(Orcamento orcamento) {
 		// desse estado posso ir para o estado de reprovado tambem
-		orcamento.estadoAtual = new Reprovado();
+		orcamento.estadoAtual = StatusOrcamento.REPROVADO;
 	}
 
 	public void finaliza(Orcamento orcamento) {

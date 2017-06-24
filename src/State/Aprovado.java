@@ -21,7 +21,7 @@ public class Aprovado implements EstadoDeUmOrcamento {
 
 	public void finaliza(Orcamento orcamento) {
 		// daqui posso ir para o estado de finalizado
-		orcamento.estadoAtual = new Finalizado();
+		orcamento.estadoAtual = StatusOrcamento.FINALIZADO;
 	}
 
 }
