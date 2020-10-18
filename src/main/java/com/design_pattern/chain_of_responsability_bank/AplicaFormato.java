@@ -2,17 +2,17 @@ package com.design_pattern.chain_of_responsability_bank;
 
 public class AplicaFormato {
 
-	public void aplica(Requisicao req, Conta conta) {
+    public String aplica(Requisicao requisicao, Conta conta) {
 
-		RespostaEmXml xml = new RespostaEmXml();
-		RespostaEmCsv csv = new RespostaEmCsv();
-		RespostaEmPorcento porcento = new RespostaEmPorcento();
-		SemResposta semResposta = new SemResposta();
+        RespostaEmXml xml = new RespostaEmXml();
+        RespostaEmCsv csv = new RespostaEmCsv();
+        RespostaEmPorcento porcento = new RespostaEmPorcento();
+        SemResposta semResposta = new SemResposta();
 
-		xml.setProxima(csv);
-		csv.setProxima(porcento);
-		porcento.setProxima(semResposta);
+        xml.setProxima(csv);
+        csv.setProxima(porcento);
+        porcento.setProxima(semResposta);
 
-		xml.responde(req, conta);
-	}
+        return xml.responde(requisicao, conta);
+    }
 }

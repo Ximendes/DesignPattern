@@ -5,11 +5,11 @@ public class RespostaEmPorcento implements Resposta {
 	private Resposta resposta;
 
 	@Override
-	public void responde(Requisicao req, Conta conta) {
+	public String responde(Requisicao req, Conta conta) {
 		if (Formato.PORCENTO.equals(req.getFormato())) {
-			System.out.println(conta.getTitular() + "%" + conta.getSaldo());
+			return conta.getTitular() + "%" + conta.getSaldo();
 		} else {
-			resposta.responde(req, conta);
+			return resposta.responde(req, conta);
 		}
 	}
 

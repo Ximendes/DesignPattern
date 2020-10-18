@@ -5,12 +5,18 @@ public class RespostaEmXml implements Resposta {
 	private Resposta resposta;
 
 	@Override
-	public void responde(Requisicao req, Conta conta) {
+	public String responde(Requisicao req, Conta conta) {
 		if (Formato.XML.equals(req.getFormato())) {
-			System.out.println("<conta><titular>" + conta.getTitular() + "</titular><saldo> " + conta.getSaldo()
-					+ "</saldo></conta>");
+			return "<conta>" +
+						"<titular>" +
+							conta.getTitular() +
+						"</titular>" +
+						"<saldo>"+
+							conta.getSaldo() +
+						"</saldo>" +
+					"</conta>";
 		} else {
-			resposta.responde(req, conta);
+			return resposta.responde(req, conta);
 		}
 	}
 
